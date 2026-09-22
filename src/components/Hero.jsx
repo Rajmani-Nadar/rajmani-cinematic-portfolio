@@ -70,29 +70,33 @@ export default function Hero() {
 
         <div className="max-w-lg hero-sub flex flex-col gap-6">
           <BlurText
-            text="I create *immersive* digital experiences that blend design, motion, and technology into something visually *memorable* and smooth to use. My work focuses on building websites and visuals with strong *atmosphere*, *detail*, and *storytelling*."
+            text="I build intelligent digital experiences powered by data, AI automation, and modern web technologies."
             delay={30}
             animateBy="words"
             direction="bottom"
             stepDuration={0.22}
             className="text-base md:text-[17px] text-white/60 font-medium leading-[1.6]"
           />
-          <BlurText
-            text="I mainly work with React, Shopify, Flutter, editing, and visual design, combining development with *cinematic* styling and *modern* user experiences."
-            delay={22}
-            animateBy="words"
-            direction="bottom"
-            stepDuration={0.2}
-            className="text-xs md:text-sm text-white/40 font-light leading-relaxed"
-          />
-          <BlurText
-            text="So far, I’ve completed *6* *websites*, edited *75+* *videos*, and created *500+* *photo* *edits* and visual concepts. Currently, I’m focusing on a *job* *app* and a *billing* *app* while continuing to explore *creative* *development* and *interactive* *design*."
-            delay={15}
-            animateBy="words"
-            direction="bottom"
-            stepDuration={0.18}
-            className="text-xs md:text-sm text-white/30 font-light leading-relaxed"
-          />
+
+          <div className="flex flex-wrap items-center gap-3 pt-2">
+            <a
+              href="/projects"
+              className="inline-flex items-center justify-center rounded-full bg-[#ff6b1a] px-5 py-3 text-[10px] font-bold uppercase tracking-[0.25em] text-black transition-colors duration-300 hover:bg-[#ff8c42]"
+            >
+              View Projects
+            </a>
+            <a
+              href="/resume/Rajmani_Nadar_Resume.pdf"
+              download
+              className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-5 py-3 text-[10px] font-bold uppercase tracking-[0.25em] text-white transition-colors duration-300 hover:border-[#ff6b1a]/50 hover:text-[#ffb68a]"
+            >
+              Download Resume
+            </a>
+          </div>
+
+          <p className="text-[10px] text-white/40 tracking-[0.4em] uppercase font-medium">
+            Coimbatore, Tamil Nadu, India
+          </p>
 
           <p className="mt-8 text-[10px] text-white/40 tracking-[0.4em] uppercase font-medium">
             Explore ↓

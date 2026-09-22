@@ -4,13 +4,13 @@ import Navbar from "../../components/Navbar";
 import ProjectsPage from "../../views/projects";
 
 export const metadata = {
-  title:       "Projects — Case Studies & Client Work by Sarang",
-  description: "Explore detailed case studies of Sarang's freelance projects — website development, video editing, and design work with client testimonials and tech breakdowns.",
-  keywords:    ["portfolio projects", "case studies", "freelance work", "client projects"],
+  title:       "Projects — Rajmani Nadar | Data Analyst • CRM Specialist • Full Stack Developer",
+  description: "Explore projects by Rajmani Nadar, a data analyst, CRM specialist, and full stack developer building intelligent digital experiences.",
+  keywords:    ["Rajmani Nadar projects", "data analyst projects", "CRM specialist", "full stack developer"],
   alternates:  { canonical: "https://sarang-space.site/projects" },
   openGraph: {
-    title: "Projects — Sarang | Case Studies & Client Work",
-    description: "Detailed case studies of web development, video editing, and design projects by Sarang.",
+    title: "Projects — Rajmani Nadar | Data Analyst • CRM Specialist • Full Stack Developer",
+    description: "Detailed work by Rajmani Nadar spanning data, CRM, and full stack development projects.",
   },
 };
 

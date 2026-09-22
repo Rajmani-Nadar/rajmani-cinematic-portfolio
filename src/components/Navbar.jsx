@@ -11,6 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const LINKS = [
   { label: "Projects", href: "/projects" },
+  { label: "Blog", href: "/blog" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
@@ -92,7 +93,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center hover:opacity-80 transition-opacity duration-300">
             <Image
               src="/photo/logo navbar inverse.png"
-              alt="Sarang — Portfolio Designer & Creative Developer"
+              alt="Rajmani Nadar — Data Analyst • CRM Specialist • Full Stack Developer"
               width={120} height={40}
               className="h-9 w-auto"
               priority
@@ -171,7 +172,7 @@ export default function Navbar() {
             </li>
           </ul>
           <div className="mobile-nav-link mt-16 text-[10px] text-white/20 tracking-[0.4em] uppercase">
-            Sarang · Portfolio
+            Rajmani Nadar · Portfolio
           </div>
         </div>
       )}

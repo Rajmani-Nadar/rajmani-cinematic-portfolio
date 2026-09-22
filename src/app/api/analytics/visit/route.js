@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+import { isDevelopmentMode, supabase } from '@/lib/supabase';
 
 function isPrivateIP(ip) {
   return !ip || ip === '::1' || ip === '127.0.0.1' ||
@@ -7,6 +7,10 @@ function isPrivateIP(ip) {
 }
 
 export async function POST(request) {
+  if (isDevelopmentMode()) {
+    return NextResponse.json({ success: true, mock: true });
+  }
+
   try {
     const { page, referrer, source } = await request.json();
     const userAgent = request.headers.get('user-agent') || '';

@@ -1,10 +1,14 @@
-import { supabase } from '@/lib/supabase';
+import { isDevelopmentMode, supabase } from '@/lib/supabase';
 import { NextResponse } from 'next/server';
 
 export const dynamic = 'force-dynamic';
 export const fetchCache = 'force-no-store';
 
 export async function GET() {
+  if (isDevelopmentMode()) {
+    return NextResponse.json({ count: 0, success: true, mock: true });
+  }
+
   try {
     const { data } = await supabase
       .from('settings')

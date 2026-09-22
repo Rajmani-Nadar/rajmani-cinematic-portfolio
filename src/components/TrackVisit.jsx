@@ -6,6 +6,7 @@ export default function TrackVisit() {
   const pathname = usePathname();
 
   useEffect(() => {
+    if (process.env.NODE_ENV === 'development') return;
     if (pathname?.startsWith('/admin')) return;
 
     const source = new URLSearchParams(window.location.search).get('source') || '';

@@ -1,7 +1,11 @@
 import { NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+import { isDevelopmentMode, supabase } from '@/lib/supabase';
 
 export async function POST(request) {
+  if (isDevelopmentMode()) {
+    return NextResponse.json({ success: true, mock: true });
+  }
+
   try {
     const { label, url, page } = await request.json();
     if (!label) return NextResponse.json({ error: 'label required' }, { status: 400 });

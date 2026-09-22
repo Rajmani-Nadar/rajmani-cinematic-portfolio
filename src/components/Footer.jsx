@@ -69,13 +69,13 @@ export default function Footer() {
         {/* name + tagline */}
         <div>
           <p className="text-[10px] text-[#ff6b1a] tracking-[0.5em] uppercase mb-4 font-medium">
-            Creative Developer
+            Data Analyst • CRM Specialist • Full Stack Developer
           </p>
           <h2
             className="font-black tracking-tighter leading-[0.85]"
             style={{ fontSize: "clamp(3rem, 8vw, 7rem)" }}
           >
-            <span className="block text-white">Sarang</span>
+            <span className="block text-white">Rajmani Nadar</span>
           </h2>
         </div>
 
@@ -124,7 +124,7 @@ export default function Footer() {
           sarangwalle@gmail.com
         </p>
         <p className="text-[10px] text-white/15 tracking-[0.3em] uppercase">
-          © {new Date().getFullYear()} Sarang Walle. All rights reserved.
+          © 2026 Rajmani Nadar. All Rights Reserved.
         </p>
       </div>
 

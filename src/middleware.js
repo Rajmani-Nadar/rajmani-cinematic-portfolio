@@ -1,8 +1,23 @@
 import { NextResponse } from 'next/server';
 import { jwtVerify } from 'jose';
 
+const isPlaceholderValue = (value = '') => {
+  const normalized = String(value).trim().toLowerCase();
+  return !normalized || ['placeholder', 'replace_with', 'your_project', 'your-', 'example', 'changeme'].some((token) => normalized.includes(token));
+};
+
+const hasSupabaseConfig = () => {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY || '';
+  return Boolean(url) && Boolean(key) && !isPlaceholderValue(url) && !isPlaceholderValue(key);
+};
+
 export async function middleware(request) {
   const { pathname } = request.nextUrl;
+
+  if (process.env.NODE_ENV === 'development' || !hasSupabaseConfig()) {
+    return NextResponse.next();
+  }
 
   // ── Admin auth ──────────────────────────────────────────────────────────────
   if (pathname.startsWith('/admin') && pathname !== '/admin/login') {

@@ -48,7 +48,7 @@ export default function Hero() {
     >
       <div className="relative z-10 max-w-5xl">
         <p className="hero-label text-[10px] md:text-xs text-[#ff6b1a] tracking-[0.2em] uppercase font-bold mb-6">
-          Digital Experience Designer
+          Data Analyst • CRM Specialist • Full Stack Developer
         </p>
 
         <h1
@@ -56,13 +56,17 @@ export default function Hero() {
         >
           <span className="hero-line block ghost z-0">Hey, I'm</span>
           <span className="block text-white -mt-2 md:-mt-6 z-10 hero-perspective">
-            {"Sarang.".split("").map((char, index) => (
+            {"Rajmani.".split("").map((char, index) => (
               <span key={index} className="hero-letter inline-block">
                 {char === " " ? "\u00A0" : char}
               </span>
             ))}
           </span>
         </h1>
+
+        <p className="hero-sub text-[10px] md:text-xs text-[#ff6b1a] tracking-[0.35em] uppercase font-medium mb-8">
+          Building intelligent digital experiences.
+        </p>
 
         <div className="max-w-lg hero-sub flex flex-col gap-6">
           <BlurText

@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 import { jwtVerify } from 'jose';
-import { supabase } from '@/lib/supabase';
+import { isDevelopmentMode, supabase } from '@/lib/supabase';
 
 const AI_SOURCE_SET = new Set(['ChatGPT', 'Gemini', 'Claude', 'Perplexity', 'Copilot', 'Grok', 'Meta AI', 'You.com']);
 
@@ -83,6 +83,26 @@ async function isAdmin() {
 }
 
 export async function GET(request) {
+  if (isDevelopmentMode()) {
+    return NextResponse.json({
+      totalVisits: 0,
+      todayVisits: 0,
+      totalClicks: 0,
+      totalReviews: 0,
+      activeUsers: 0,
+      topSearches: [],
+      recentVisits: [],
+      clicksByLabel: [],
+      visitsByPage: [],
+      visitsBySource: [],
+      aiVisits: [],
+      visitsPerDay: [],
+      visitsByCountry: [],
+      success: true,
+      mock: true,
+    });
+  }
+
   if (!(await isAdmin())) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }

@@ -1,8 +1,8 @@
 export default function manifest() {
   return {
-    name:             "Sarang — Creative Developer",
-    short_name:       "Sarang",
-    description:      "Cinematic digital experiences at the intersection of design and code.",
+    name:             "Rajmani Nadar — Data Analyst • CRM Specialist • Full Stack Developer",
+    short_name:       "Rajmani",
+    description:      "Building intelligent digital experiences in Coimbatore, Tamil Nadu, India.",
     start_url:        "/",
     display:          "standalone",
     background_color: "#080808",

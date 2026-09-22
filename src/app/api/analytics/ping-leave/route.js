@@ -1,7 +1,11 @@
-import { supabase } from '@/lib/supabase';
+import { isDevelopmentMode, supabase } from '@/lib/supabase';
 import { NextResponse } from 'next/server';
 
 export async function POST(req) {
+  if (isDevelopmentMode()) {
+    return NextResponse.json({ success: true, mock: true });
+  }
+
   try {
     const { sessionId } = await req.json();
     if (!sessionId) return NextResponse.json({ success: false }, { status: 400 });

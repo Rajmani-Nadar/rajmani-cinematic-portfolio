@@ -4,6 +4,8 @@ import TrackVisit from "@/components/TrackVisit";
 import { Analytics } from "@vercel/analytics/next";
 import NewsletterPopup from "@/components/NewsletterPopup";
 
+const shouldEnableAnalytics = process.env.NODE_ENV !== "development";
+
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -22,42 +24,40 @@ export const metadata = {
   metadataBase: new URL(BASE),
 
   title: {
-    default: "Sarang — Next.js Developer, Shopify Expert, Graphic Designer & Video Editor",
-    template: "%s — Sarang | Next.js Developer & Shopify Expert",
+    default: "Rajmani Nadar — Data Analyst • CRM Specialist • Full Stack Developer",
+    template: "%s — Rajmani Nadar | Data Analyst • CRM Specialist • Full Stack Developer",
   },
   description:
-    "Creative developer and designer specializing in Next.js websites, Shopify stores, branding, cinematic video editing, motion graphics, and premium digital experiences.",
+    "Data Analyst, CRM Specialist, and Full Stack Developer based in Coimbatore, Tamil Nadu, India, building intelligent digital experiences with modern web technologies.",
   keywords: [
-    "Next.js Developer", "Creative Web Developer", "Shopify Expert", 
-    "Video Editor", "Graphic Designer", "UI/UX Designer", 
-    "Cinematic Portfolio", "GSAP Animation", "React Developer",
-    "Modern Web Design", "Portfolio Template", "Freelance Developer India"
+    "Data Analyst", "CRM Specialist", "Full Stack Developer", "Coimbatore Developer",
+    "Next.js Developer", "React Developer", "CRM Systems", "Business Intelligence"
   ],
-  authors: [{ name: "Sarang", url: BASE }],
-  creator: "Sarang",
-  publisher: "Sarang",
+  authors: [{ name: "Rajmani Nadar", url: BASE }],
+  creator: "Rajmani Nadar",
+  publisher: "Rajmani Nadar",
 
   openGraph: {
     type: "website",
     locale: "en_US",
     url: BASE,
-    siteName: "Sarang — Next.js Developer, Shopify Expert, Graphic Designer & Video Editor",
-    title: "Sarang — Next.js Developer, Shopify Expert, Graphic Designer & Video Editor",
-    description: "Creative developer and designer specializing in Next.js websites, Shopify stores, branding, cinematic video editing, motion graphics, and premium digital experiences.",
+    siteName: "Rajmani Nadar — Data Analyst • CRM Specialist • Full Stack Developer",
+    title: "Rajmani Nadar — Data Analyst • CRM Specialist • Full Stack Developer",
+    description: "Data Analyst, CRM Specialist, and Full Stack Developer based in Coimbatore, Tamil Nadu, India, building intelligent digital experiences.",
     images: [{
       url: "/og-image.png",
       width: 1200,
       height: 630,
-      alt: "Sarang — Next.js Developer, Shopify Expert, Graphic Designer & Video Editor",
+      alt: "Rajmani Nadar — Data Analyst • CRM Specialist • Full Stack Developer",
     }],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Sarang — Next.js Developer, Shopify Expert, Graphic Designer & Video Editor",
-    description: "Creative developer and designer specializing in Next.js websites, Shopify stores, branding, cinematic video editing, motion graphics, and premium digital experiences.",
+    title: "Rajmani Nadar — Data Analyst • CRM Specialist • Full Stack Developer",
+    description: "Data Analyst, CRM Specialist, and Full Stack Developer based in Coimbatore, Tamil Nadu, India, building intelligent digital experiences.",
     images: ["/og-image.png"],
-    creator: "@sarang",
+    creator: "@rajmani_nadar",
   },
 
   robots: {
@@ -93,16 +93,14 @@ const jsonLd = {
     {
       "@type": "Person",
       "@id": `${BASE}/#person`,
-      "name": "Sarang",
+      "name": "Rajmani Nadar",
       "url": BASE,
-      "jobTitle": "Creative Developer",
-      "description": "Creative developer building cinematic digital experiences at the intersection of design and code. Specialising in Next.js, GSAP, Three.js, and WebGL.",
+      "jobTitle": "Data Analyst • CRM Specialist • Full Stack Developer",
+      "description": "Data Analyst, CRM Specialist, and Full Stack Developer based in Coimbatore, Tamil Nadu, India, building intelligent digital experiences with modern web technologies.",
       "knowsAbout": [
-        "Next.js", "React", "GSAP", "Three.js", "WebGL", "Tailwind CSS",
-        "JavaScript", "TypeScript", "Node.js", "Flutter", "Shopify",
-        "Video Editing", "Motion Graphics", "UI/UX Design", "Figma",
-        "After Effects", "Premiere Pro", "DaVinci Resolve",
-        "Photoshop", "Illustrator", "Python", "MongoDB", "PostgreSQL"
+        "Data Analysis", "CRM Systems", "Full Stack Development", "Next.js", "React",
+        "JavaScript", "TypeScript", "Node.js", "Business Intelligence", "Python",
+        "PostgreSQL", "MongoDB", "UI/UX", "Dashboard Design"
       ],
       "hasOccupation": [
         {
@@ -169,25 +167,26 @@ const jsonLd = {
     {
       "@type": "ProfessionalService",
       "@id": `${BASE}/#localbusiness`,
-      "name": "Sarang — Creative Developer",
+      "name": "Rajmani Nadar — Data Analyst • CRM Specialist • Full Stack Developer",
       "image": `${BASE}/og-image.png`,
       "url": BASE,
       "telephone": "+91-0000000000",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "India",
+        "addressLocality": "Coimbatore",
+        "addressRegion": "Tamil Nadu",
         "addressCountry": "IN"
       },
       "priceRange": "$$",
-      "description": "Freelance creative developer & portfolio designer.",
+      "description": "Data analyst, CRM specialist, and full stack developer based in Coimbatore, Tamil Nadu, India.",
       "founder": { "@id": `${BASE}/#person` }
     },
     {
       "@type": "WebSite",
       "@id": `${BASE}/#website`,
       "url": BASE,
-      "name": "Sarang — Creative Developer",
-      "description": "Portfolio of Sarang, a creative developer building cinematic digital experiences with React, Next.js, GSAP, Three.js, and WebGL.",
+      "name": "Rajmani Nadar — Data Analyst • CRM Specialist • Full Stack Developer",
+      "description": "Portfolio of Rajmani Nadar, a data analyst, CRM specialist, and full stack developer building intelligent digital experiences.",
       "publisher": { "@id": `${BASE}/#person` },
       "inLanguage": "en-US",
     },
@@ -195,7 +194,7 @@ const jsonLd = {
       "@type": "ProfilePage",
       "@id": `${BASE}/#profilepage`,
       "url": BASE,
-      "name": "Sarang — Creative Developer Portfolio",
+      "name": "Rajmani Nadar — Portfolio",
       "isPartOf": { "@id": `${BASE}/#website` },
       "about": { "@id": `${BASE}/#person` },
       "mainEntity": { "@id": `${BASE}/#person` },
@@ -377,10 +376,10 @@ export default function RootLayout({ children }) {
         )}
       </head>
       <body>
-        <TrackVisit />
+        {shouldEnableAnalytics ? <TrackVisit /> : null}
         <div className="bottom-blur" aria-hidden="true" />
         {children}
-        <Analytics />
+        {shouldEnableAnalytics ? <Analytics /> : null}
         <NewsletterPopup />
       </body>
     </html>

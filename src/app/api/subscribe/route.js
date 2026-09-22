@@ -1,8 +1,5 @@
-import { createClient } from "@supabase/supabase-js";
 import { NextResponse } from "next/server";
-
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY; 
+import { createSupabaseClient, isSupabaseConfigured } from "@/lib/supabase";
 
 export async function POST(req) {
   try {
@@ -12,15 +9,18 @@ export async function POST(req) {
       return NextResponse.json({ error: "Invalid email address" }, { status: 400 });
     }
 
-    const supabase = createClient(supabaseUrl, supabaseServiceKey);
-    
+    if (!isSupabaseConfigured() || process.env.NODE_ENV === "development") {
+      return NextResponse.json({ success: true, message: "Local dev mode: subscription skipped." }, { status: 200 });
+    }
+
+    const supabase = createSupabaseClient();
+
     const { data, error } = await supabase
       .from("subscribers")
       .insert([{ email }])
       .select()
       .single();
 
-    // If error is unique violation (23505), it means they are already subscribed
     if (error && error.code === "23505") {
       return NextResponse.json({ success: true, message: "Already subscribed!" }, { status: 200 });
     }

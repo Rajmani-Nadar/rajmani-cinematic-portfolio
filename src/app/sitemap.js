@@ -1,4 +1,4 @@
-import { createClient } from "@supabase/supabase-js";
+import { createSupabaseClient, isSupabaseConfigured } from "@/lib/supabase";
 
 const BASE = "https://sarang-space.site";
 
@@ -11,15 +11,15 @@ export default async function sitemap() {
     { url: `${BASE}/contact`,          lastModified: new Date(), changeFrequency: "yearly",  priority: 0.75 },
   ];
 
+  if (!isSupabaseConfigured() || process.env.NODE_ENV === "development") {
+    return staticPages;
+  }
+
   let projectPages = [];
 
   try {
-    const supabase = createClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL,
-      process.env.SUPABASE_SERVICE_ROLE_KEY
-    );
+    const supabase = createSupabaseClient();
 
-    // ── Project pages ─────────────────────────────────────────────────
     const { data: projects } = await supabase
       .from("projects")
       .select("id, updated_at")

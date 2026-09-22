@@ -21,6 +21,27 @@ const renderParsedText = (text) => {
   });
 };
 
+const TIMELINE = [
+  { title: "Data Analyst", period: "2024 — Present", description: "Translating business data into dashboards, insights, and clearer decisions." },
+  { title: "CRM Specialist", period: "2023 — Present", description: "Designing and refining customer workflows to improve retention and efficiency." },
+  { title: "Full Stack Developer", period: "2022 — Present", description: "Building responsive, scalable web experiences for product and business workflows." },
+  { title: "Automation & Reporting", period: "2021 — Present", description: "Streamlining reporting and repetitive processes through smarter digital operations." },
+];
+
+const STATISTICS = [
+  { value: "5+", label: "Years of problem solving" },
+  { value: "20+", label: "Business workflows improved" },
+  { value: "100%", label: "Focus on measurable outcomes" },
+  { value: "24/7", label: "Mindset for continuous learning" },
+];
+
+const FOCUS_AREAS = [
+  { title: "Data & Insights", description: "Using analysis to uncover trends, opportunities, and clear business direction." },
+  { title: "CRM Strategy", description: "Creating customer journeys and system flows that improve experience and retention." },
+  { title: "Full Stack Delivery", description: "Building web products that combine logic, interface design, and business value." },
+  { title: "AI & Automation", description: "Applying modern automation to simplify operations and accelerate decision-making." },
+];
+
 export default function AboutPage() {
   const ref = useRef(null);
   const router = useRouter();
@@ -69,9 +90,9 @@ export default function AboutPage() {
 
         <div className="ap-card flex justify-center my-6">
           <ProfileCard
-            name="Sarang"
-            title="Creative Developer & Designer"
-            handle="sarang"
+            name="Rajmani Nadar"
+            title="Data Analyst • CRM Specialist • Full Stack Developer"
+            handle="rajmani"
             avatarUrl="/photo/Sarang.png"
             miniAvatarUrl="/photo/Sarang.png"
             showUserInfo={true}
@@ -86,6 +107,43 @@ export default function AboutPage() {
             {renderParsedText(text)}
           </p>
         ))}
+
+        <div className="space-y-4 pt-4">
+          <p className="ap-label text-[9px] text-[#ff6b1a] tracking-[0.4em] uppercase mb-3 font-medium">Experience Timeline</p>
+          <div className="space-y-3">
+            {TIMELINE.map((item) => (
+              <div key={item.title} className="ap-card border-l border-[#ff6b1a]/30 pl-3 py-1">
+                <p className="text-[8px] uppercase tracking-[0.35em] text-white/35">{item.period}</p>
+                <h4 className="mt-1 text-[11px] text-white font-medium tracking-wide uppercase">{item.title}</h4>
+                <p className="mt-1 text-[10px] text-white/45 leading-relaxed">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="space-y-4 pt-6">
+          <p className="ap-label text-[9px] text-[#ff6b1a] tracking-[0.4em] uppercase mb-3 font-medium">Impact</p>
+          <div className="grid grid-cols-2 gap-3">
+            {STATISTICS.map((item) => (
+              <div key={item.label} className="ap-card border border-white/10 bg-white/[0.03] p-3">
+                <p className="text-[18px] text-white font-black tracking-tighter">{item.value}</p>
+                <p className="mt-1 text-[8px] uppercase tracking-[0.2em] text-white/45">{item.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="space-y-4 pt-6">
+          <p className="ap-label text-[9px] text-[#ff6b1a] tracking-[0.4em] uppercase mb-3 font-medium">Focus Areas</p>
+          <div className="space-y-3">
+            {FOCUS_AREAS.map((item) => (
+              <div key={item.title} className="ap-card border border-white/10 bg-white/[0.03] p-3">
+                <h4 className="text-[10px] text-white font-medium tracking-[0.2em] uppercase">{item.title}</h4>
+                <p className="mt-1 text-[10px] text-white/45 leading-relaxed">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
 
         <a
           href={RESUME_URL}
@@ -141,9 +199,9 @@ export default function AboutPage() {
           {/* Left: Interactive Studio Card (Sticky) */}
           <div className="ap-card flex justify-center items-start sticky top-[15vh]">
             <ProfileCard
-              name="Sarang"
-              title="Creative Developer & Designer"
-              handle="sarang"
+              name="Rajmani Nadar"
+              title="Data Analyst • CRM Specialist • Full Stack Developer"
+              handle="rajmani"
               avatarUrl="/photo/Sarang.png"
               miniAvatarUrl="/photo/Sarang.png"
               showUserInfo={true}
@@ -170,6 +228,46 @@ export default function AboutPage() {
                 </p>
               ))}
             </div>
+
+            <div className="w-full space-y-8 mb-8">
+              <div className="space-y-4">
+                <p className="ap-label text-[10px] text-[#ff6b1a] tracking-[0.4em] uppercase font-medium">Experience Timeline</p>
+                <div className="space-y-3">
+                  {TIMELINE.map((item) => (
+                    <div key={item.title} className="ap-card border-l border-[#ff6b1a]/30 pl-4 py-2">
+                      <p className="text-[8px] uppercase tracking-[0.35em] text-white/35">{item.period}</p>
+                      <h4 className="mt-1 text-[11px] text-white font-medium tracking-wide uppercase">{item.title}</h4>
+                      <p className="mt-1 text-[10px] text-white/45 leading-relaxed">{item.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <p className="ap-label text-[10px] text-[#ff6b1a] tracking-[0.4em] uppercase font-medium">Impact</p>
+                <div className="grid grid-cols-2 gap-3">
+                  {STATISTICS.map((item) => (
+                    <div key={item.label} className="ap-card border border-white/10 bg-white/[0.03] p-3">
+                      <p className="text-[20px] text-white font-black tracking-tighter">{item.value}</p>
+                      <p className="mt-1 text-[8px] uppercase tracking-[0.2em] text-white/45">{item.label}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <p className="ap-label text-[10px] text-[#ff6b1a] tracking-[0.4em] uppercase font-medium">Focus Areas</p>
+                <div className="grid grid-cols-2 gap-3">
+                  {FOCUS_AREAS.map((item) => (
+                    <div key={item.title} className="ap-card border border-white/10 bg-white/[0.03] p-3">
+                      <h4 className="text-[10px] text-white font-medium tracking-[0.2em] uppercase">{item.title}</h4>
+                      <p className="mt-1 text-[10px] text-white/45 leading-relaxed">{item.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
             <a href={RESUME_URL} target="_blank" rel="noopener noreferrer"
               className="ap-bio inline-flex items-center gap-2 px-6 py-3 border border-[#ff6b1a]/30 text-[#ff6b1a] text-[10px] font-bold uppercase tracking-widest rounded-full hover:bg-[#ff6b1a] hover:text-black transition-colors duration-300"
             >
